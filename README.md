@@ -7,21 +7,27 @@
 Ddownload and install the main code from [AdapMen](https://github.com/liuxhym/AdapMen).
 
 ```
-git clone --recursive  https://github.com/liuxhym/AdapMen.git
+git clone https://github.com/liuxhym/AdapMen.git
 cd AdapMen
 pip install -e .
 ```
 
-Install the [unstable_baselines](https://github.com/x35f/unstable_baselines) submodule
+Install the [unstable_baselines](https://github.com/x35f/unstable_baselines)
 
 ```
+git clone https://github.com/x35f/unstable_baselines -b AdapMen
 cd unstable_baselines
 pip install -e .
 ```
 
 ## Usage
 
-To reproduce the experiments on MetaDrive,train a SAC expert and for Atari, a DQN expert.  
+An expert model for MetaDrive is provided. You can reproduce the experiments on MetaDrive with the following commands:
+```
+python scripts/run_[algorithm_name].py scripts/config/[algorithm_name]/metadrive/metadrive.py args(optional)
+```
+
+To reproduce your own expert on MetaDrive,train a SAC expert and for Atari, a DQN expert.  
 
 ```
 cd unstable_baselines/unstable_baselines/baselines/[sac,dqn]
@@ -38,5 +44,5 @@ python scripts/run_[algorithm_name].py scripts/config/[algorithm_name]/[envirome
 If you want to conduct experiments with a human expert, please run algorithms as following:
 
 ```
-python scripts/run_[algorithm_name].py scripts/config/[algorithm_name]/[enviroment_name]/[task_name]-human.py args(optional)
+python scripts/run_[algorithm_name].py scripts/config/[algorithm_name]/[enviroment_name]/[task_name]_human.py args(optional)
 

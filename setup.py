@@ -8,17 +8,20 @@ setup(
     packages=find_packages(),
     # python_requires='=3.9.7',
     install_requires=[
-        'torch',
+        'torch<=2.0.1',
         'gym[atari]==0.23.1',
         'gym[accept-rom-license]==0.23.1',
-        'scipy',
-        'numpy',
+        'scipy==1.7.3',
         'munch',
         'pyyaml',
         'colorama',
         'pandas',
         'mujoco_py',
-        'tensorboard'
+        'tensorboard',
+        'metadrive-simulator==0.2.5.1',
+        'numpy',
+        'dm_tree',
+        'ray'
     ],
     package_data={
         # include default config files
